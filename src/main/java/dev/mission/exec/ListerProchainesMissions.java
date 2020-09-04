@@ -1,7 +1,5 @@
 package dev.mission.exec;
 
-import org.hibernate.type.descriptor.java.LocalDateJavaDescriptor;
-
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Controller;
 import dev.mission.entite.Mission;
