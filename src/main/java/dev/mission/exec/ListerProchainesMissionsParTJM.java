@@ -1,6 +1,8 @@
 package dev.mission.exec;
 
 import java.math.BigDecimal;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -14,6 +16,7 @@ import dev.mission.repository.MissionRepository;
 @Profile("listerProchainesMissionsParJTM")
 public class ListerProchainesMissionsParTJM implements Runnable {
 	private MissionRepository missionRepository;
+	private static final Logger LOG = LoggerFactory.getLogger(ListerProchainesMissions.class);
 
 	public ListerProchainesMissionsParTJM(MissionRepository missionRepository) {
 		this.missionRepository = missionRepository;
@@ -26,8 +29,8 @@ public class ListerProchainesMissionsParTJM implements Runnable {
 		List<Mission> listeMissions = this.missionRepository.findByDateAndByTauxJournalier(date, tauxJournalier);
 		System.out.println(listeMissions.size());
 		for (Mission mission : listeMissions) {
-			System.out.println(("id=" + mission.getId() + " libelle=" + mission.getLibelle() + " début=" + mission.getDateDebut() + " fin=" + mission.getDateFin() + " tj=" + mission.getTauxJournalier()));
-		}
+			System.out.println(mission.toString());
+		}	
 	}
 	
 }

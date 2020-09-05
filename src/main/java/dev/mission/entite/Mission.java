@@ -48,4 +48,11 @@ public class Mission {
 	public void setTauxJournalier(BigDecimal tauxJournalier) {
 		this.tauxJournalier = tauxJournalier;
 	}
+	@Override
+	public String toString() {
+		return "Mission [id=" + id + ", libelle=" + libelle + ", dateDebut=" + dateDebut + ", dateFin=" + dateFin
+				+ ", tauxJournalier=" + tauxJournalier + "]";
+	}
+	
+	
 }

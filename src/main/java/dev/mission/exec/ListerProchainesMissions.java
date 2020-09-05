@@ -23,7 +23,7 @@ public class ListerProchainesMissions implements Runnable {
 		List<Mission> listeMissions = this.missionRepository.findByDateDebutAfter(maDate);
 		System.out.println(listeMissions.size());
 		for (Mission mission : listeMissions) {
-			System.out.println(("id=" + mission.getId() + " libelle=" + mission.getLibelle() + " début=" + mission.getDateDebut() + " fin=" + mission.getDateFin() + " tj=" + mission.getTauxJournalier()));
+			System.out.println(mission.toString());
 		}
 	}
 
